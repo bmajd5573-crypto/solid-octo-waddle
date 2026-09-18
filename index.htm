@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -6,8 +7,13 @@
 
   <title>اجتماع الخدام</title>
 
-  <link rel="icon" type="image/png" href="/icon.png">
-  <link rel="apple-touch-icon" href="/icon.png">
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Icon -->
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="apple-touch-icon" href="./icon.png">
 
   <style>
     body {
@@ -30,11 +36,26 @@
 
   <div class="box">
     <p>جاري فتح اجتماع الخدام...</p>
+
     <a href="https://script.google.com/macros/s/AKfycbwaeEcPP40Xw4sJKxtCA2PBhvGaoZbQXu7IE465UdoZYHdXB9Jf-dWrLezfXPZEid3q2A/exec">
       فتح التطبيق
     </a>
   </div>
 
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js")
+        .then(() => {
+          console.log("Service Worker registered successfully");
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  </script>
+
+  <!-- فتح نظام اجتماع الخدام -->
   <script>
     window.location.href =
       "https://script.google.com/macros/s/AKfycbwaeEcPP40Xw4sJKxtCA2PBhvGaoZbQXu7IE465UdoZYHdXB9Jf-dWrLezfXPZEid3q2A/exec";
@@ -42,3 +63,8 @@
 
 </body>
 </html>
+```
+
+**استبدل محتوى `index.html` بالكامل بالكود ده** واعمل **Commit changes**.
+
+بعدها نعمل اختبار سريع على رابط GitHub Pages بتاعك، ونتأكد إن الـ PWA اتعرف صح قبل ما نحاول نثبته على الموبايل.
