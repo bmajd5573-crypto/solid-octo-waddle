@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +25,32 @@
       justify-content: center;
       font-family: Arial, sans-serif;
       text-align: center;
+      background: #ffffff;
     }
 
     .box {
       padding: 25px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 10px;
+      background: #8B0000;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -35,11 +58,21 @@
 <body>
 
   <div class="box">
-    <p>جاري فتح اجتماع الخدام...</p>
 
-    <a href="https://script.google.com/macros/s/AKfycbwaeEcPP40Xw4sJKxtCA2PBhvGaoZbQXu7IE465UdoZYHdXB9Jf-dWrLezfXPZEid3q2A/exec">
-      فتح التطبيق
+    <img
+      class="logo"
+      src="./icon.png"
+      alt="اجتماع الخدام"
+    >
+
+    <h1>اجتماع خدام ذهبي الفم</h1>
+
+    <a
+      href="https://script.google.com/macros/s/AKfycbwaeEcPP40Xw4sJKxtCA2PBhvGaoZbQXu7IE465UdoZYHdXB9Jf-dWrLezfXPZEid3q2A/exec"
+    >
+      فتح اجتماع الخدام
     </a>
+
   </div>
 
   <!-- Service Worker -->
@@ -55,13 +88,6 @@
     }
   </script>
 
-  <!-- فتح نظام اجتماع الخدام -->
-
-
 </body>
 </html>
 ```
-
-**استبدل محتوى `index.html` بالكامل بالكود ده** واعمل **Commit changes**.
-
-بعدها نعمل اختبار سريع على رابط GitHub Pages بتاعك، ونتأكد إن الـ PWA اتعرف صح قبل ما نحاول نثبته على الموبايل.
